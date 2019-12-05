@@ -1,0 +1,16 @@
+{# 注意1：将来可能不止一种页面有附件，因此把附件模块单独独立出来以便复用 #}
+{# 注意2：有些页面可能没有附件，没有附件的页面，则什么也不显示 #}
+{% if attachments %}
+<div data-css="project-default-attachments">
+  <div class="file-down">
+    <fieldset class="p-4 rounded">
+      <legend class="p-2 rounded">文件下载</legend>
+      {% for doc in attachments %}
+      <div class="list-group">
+        <a href="{{ doc.download_url }}" class="list-group-item p-0 pt-1 pb-1 border-0">{{ doc.filename }}</a>
+      </div>
+      {% endfor %}
+    </fieldset>
+  </div>
+</div>
+{% endif %}

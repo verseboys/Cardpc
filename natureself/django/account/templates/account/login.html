@@ -1,0 +1,17 @@
+{% extends 'account/base.html' %}
+
+{% block title %}登录{% endblock %}
+
+{% block body %}
+<div id="app" style="min-height: 100vh; background: #e4e5e6;" class="d-flex align-items-center">
+  <ns-login
+    role="{{ role|default:'' }}"
+    title="{{ title|default:'登录' }}"
+    next="{{ next|default:'/' }}"
+    reset-password-url="{% url 'page_reset_password' %}"
+    sub-title="{{ sub_title|default:'请登录' }}"
+    username-placeholder="{{ username_placeholder|default:'用户名' }}"
+    password-placeholder="{{ password_placeholder|default:'密码' }}"
+    />
+</div>
+{% endblock %}

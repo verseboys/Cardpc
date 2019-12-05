@@ -1,0 +1,48 @@
+{% load static %}
+<div class="common-header hide-on-sm-media">
+  <div class="header-banner">
+    <a href="https://www.cardpc.org/"><img src="{% static 'cardpc/img/logo-banner.png' %}"></a>
+  </div>
+  <div class="navbar">
+    <ul class="tab-menu d-flex">
+      <li>
+        <a href="https://www.cardpc.org/">首页</a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <span>基层资讯</span>
+        </a>
+        <ul class="innerPage">
+          <li><a href="https://www.cardpc.org/article/show/5"><span>联盟新闻</span></a></li>
+          <li><a href="https://www.cardpc.org/article/show/7"><span>文件下载</span></a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <span>呼吸学院</span>
+        </a>
+        <ul class="innerPage">
+          <li><a href="https://www.cardpc.org/expert/show/10"><span>呼吸名师</span></a></li>
+          <li><a href="https://www.cardpc.org/literature/show/11"><span>文献指南</span></a></li>
+        </ul>
+      </li>
+      <li class="active hover">
+        <a href="https://www.cardpc.org/page/show/3">
+          <span>学术活动</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.cardpc.org/page/show/14">
+          <span>关于联盟</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% if request.user_agent.is_mobile %}
+<div class="mobile-common-header">
+  <div class="mobile-header-banner">
+    <a href="javascript:history.back(-1);"><img src="{% static 'cardpc/img/back.png' %}" alt=""><span>返回</span></a>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,86 @@
+[data-css="course-info"] {
+  padding: 30px;
+  background-color: #fff;
+
+  .nav-pills {
+    border-bottom: 1px solid #eaeaf0;
+
+    > li {
+      width: 84px;
+      height: 40px;
+      text-align: center;
+      font-size: 16px;
+      margin: 0 18px;
+
+      a.active {
+        border-bottom: 2px solid #4a90e2;
+        display: inline-block;
+        // width and height should be same as parent "li"
+        // it makes the bottom border like the parent's
+        width: 84px;
+        height: 40px;
+      }
+    }
+  }
+
+  #course-introduction {
+    padding-left: 35px;
+
+    p {
+      text-indent: 2em;
+    }
+
+    li {
+      list-style: disc;
+    }
+  }
+
+  #course-lessons {
+    a {
+      height: 70px;
+
+      &:nth-of-type(odd) {
+        background-color: #f8fafc;
+      }
+
+      &:hover,
+      &.current {
+        background-color: #e1f5fe;
+      }
+
+      span {
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        font-size: 16px;
+        color: #404040;
+      }
+
+      .lesson-number {
+        width: 100px;
+        text-align: center;
+      }
+
+      .lesson-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-right: 10px;
+      }
+
+      .lesson-status {
+        width: 24px;
+        height: 24px;
+        background: url('../img/check-circle-grey.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &.watched {
+          background: url('../img/check-circle-green.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}

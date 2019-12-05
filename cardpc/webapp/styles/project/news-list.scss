@@ -1,0 +1,49 @@
+[data-css~="project-news-list"] {
+  // 专题新闻列表页
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .news-list-item {
+    margin-right: -10px;
+    margin-left: -10px;
+    color: #727a89;
+    font-size: 0.9rem;
+
+    .news-title > a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+
+    a {
+      color: #222;
+
+      &:hover {
+        color: var(--color1);
+
+        img {
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
+    .summary {
+      p,
+      img { display: none; }
+
+      p:nth-of-type(1) {
+        display: block;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .news-list-item {
+      h2 {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

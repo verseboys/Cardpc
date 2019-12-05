@@ -1,0 +1,33 @@
+div.highlights {
+  width: 1200px;
+  background: #fff;
+  margin: 17px auto;
+}
+
+div.highlights > div {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+div.highlights > div > ul {
+  width: 255px;
+  margin: 15px 10px;
+}
+
+div.highlights > div > ul li:first-child {
+  width: 255px;
+  height: 178px;
+}
+
+div.highlights > div > ul li:first-child img {
+  width: 100%;
+  height: 100%;
+}
+
+div.highlights > div > ul li:last-child {
+  font-size: 18px;
+  color: #333;
+  line-height: 40px;
+  font-weight: bolder;
+}

@@ -1,0 +1,47 @@
+{# 知享新闻详情页 #}
+{% extends "cardpc/_base.html" %}
+{% load static %}
+{% block data-js %}zhixiang-news-detail{% endblock %}
+{% block data-css %}zhixiang zhixiang-news-detail{% endblock %}
+{% block main %}
+<!-- 知享新闻列表页 -->
+	<!-- 面包屑导航 S -->
+	<div class="breadcrumb">
+		<ul>
+			<li>
+				<a href="https://www.cardpc.org/">首页</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li>
+				<a href="https://www.cardpc.org/page/show/3">学术活动</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li>
+				<a href="https://www.cardpc.org/page/show/3">活动大厅</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li>
+				<a href="javscript:;">知享呼吸</a>
+				<span class="divider">&gt;</span>
+			</li>
+            <li>
+				<a href="javscript:;">新闻</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li class="active">详情页</li>
+		</ul>
+	</div>
+	<!-- 面包屑导航 E -->
+	<div class="zhixiang-news-detail">
+		<div class="news-detail">
+			<h2>{{news.title}}</h2>
+			<div class="author">
+				<span>{{news.author_name}}</span>
+				<time>{{news.publish_time|date:'Y/m/d H:i:s'}}</time>
+			</div>
+			<div class="rich-text">
+				{{news.content|safe}}
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{# 知享首页 #}
+{% extends "cardpc/_base.html" %}
+{% load static %}
+{% block data-js %}zhixiang-homepage{% endblock %}
+{% block data-css %}zhixiang zhixiang-homepage{% endblock %}
+{% block main %}
+	{% if not request.user_agent.is_mobile %}
+	<div class="banner">
+		<h2></h2>
+	</div>
+	<div id="container" class="d-flex">
+		<div class="main_left">
+			<div class="introduction">
+				<h3>简介</h3>
+				<p> 为了促进基层医生熟练掌握呼吸系统常见病、多发病的基本理论、基本知识和基本技能，全面提升基层医生呼吸疾病防治能力，推动国家呼吸疾病分级诊疗、基层首诊制度的落地实施。中国宋庆龄基金会和中国医师协会呼吸医师分会共同发起、组织设立了“全国基层医生呼吸疾病知识和技能大赛”项目。</p>
+				<p>项目于2017年、2018年在全国范围内，举办了两届面向不同级别医疗机构的培训、选拔及竞赛活动，累计培训基层医生超2万人次。项目获得了授课专家与参培医生代表的广泛好评，同时也获得了国家卫生行政管理部门、各省市基层呼吸疾病防治联盟、各省医学会呼吸分会专家等多方支持与认可。</p>
+			</div>
+		</div>
+		<!-- 右部分：新闻动态列表、公众号二维码 -->
+		<div class="main_right">
+			<a href="{% url 'zhixiang-training' %}">立即参与</a>
+			<div class="public_code">
+				<img src="{% static 'cardpc/img/cardpc-wechat-mp-qrcode.png' %}" alt="基层联盟"><img src="{% static 'cardpc/img/cardpc-wechat-mp-ad.png' %}" alt="扫码关注基层联盟公众号">
+			</div>
+		</div>
+	</div>
+    {% elif request.user_agent.is_mobile %}
+	<div class="mobile-banner"></div>
+	<div class="mobile-container">
+        <div class="mobile-introduct">
+            <a href="javascript:;">简介</a>
+        </div>
+		<div class="mobile-summary">"知享呼吸"—全国基层医疗机构医护人员呼吸疾病知识和技能大赛</div>
+        <div class="introduction mt-10">
+            <h3>课程简介</h3>
+            <p> 为了促进基层医生熟练掌握呼吸系统常见病、多发病的基本理论、基本知识和基本技能，全面提升基层医生呼吸疾病防治能力，推动国家呼吸疾病分级诊疗、基层首诊制度的落地实施。中国宋庆龄基金会和中国医师协会呼吸医师分会共同发起、组织设立了“全国基层医生呼吸疾病知识和技能大赛”项目。</p>
+            <p>项目于2017年、2018年在全国范围内，举办了两届面向不同级别医疗机构的培训、选拔及竞赛活动，累计培训基层医生超2万人次。项目获得了授课专家与参培医生代表的广泛好评，同时也获得了国家卫生行政管理部门、各省市基层呼吸疾病防治联盟、各省医学会呼吸分会专家等多方支持与认可。</p>
+        </div>
+		<a href="{% url 'zhixiang-training' %}">立即参与</a>
+	</div>
+	{% endif %}
+{% endblock %}

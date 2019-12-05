@@ -1,0 +1,19 @@
+{% load static %}
+<div id="media-share-widget" class="flex-shrink-0 {% if background == 'dark' %}dark{% endif %}" data-css="media-share-widget" data-js="media-share-widget">
+  分享
+  {% if background == 'dark' %}
+  <img src="{% static 'cardpc/icons/wechat-white.svg' %}" alt="微信" height="24">
+  {% else %}
+  <img src="{% static 'cardpc/icons/wechat-black.svg' %}" alt="微信" height="24">
+  {% endif %}
+  <span class="wechat-logo"></span>
+  <div class="qrcode-box">
+    <div class="qrcode float-left" id="qrcode-current-location"></div>
+    <div class="description float-left">打开微信“扫一扫”<br>打开网页后点击屏幕<br>右上角“分享”按钮</div>
+  </div>
+  <div class="wx-share-box">
+    <div class="description">
+      <div class="text">点击右上角<br>分享到朋友圈，与好友一起分享课程！</div>
+    </div>
+  </div>
+</div>

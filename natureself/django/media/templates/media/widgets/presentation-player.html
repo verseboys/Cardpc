@@ -1,0 +1,64 @@
+{% load static %}
+<div id="presentation-player" class="d-flex flex-column justify-content-center" data-css="presentation-player">
+  <div id='lesson-meta' data-lesson-id="{{ lesson.id }}" data-watched-seconds="{{ lesson.record.watched_seconds }}" data-min-watch-seconds="{{ lesson.presentation.min_watch_seconds }}" style="display: none;"></div>
+
+  <div class="ns-content d-flex align-items-center">
+    <h2 class="flex-grow-1 lesson-title">{{ lesson.title }}</h2>
+    <span id="watchedTimer" class="mr-2"></span>
+    {% include './share-widget.html' with background="dark" %}
+  </div>
+
+  <div class="ns-content ppt-main-container d-flex align-items-center">
+    <div class="fullscreen-controller"></div>
+    <div class="ns-stretchy-wrapper ratio-20-9">
+      <div class="swiper-container ppt-main">
+        <div class="swiper-wrapper">
+          {% for slide in lesson.presentation.slides.all %}
+          <div class="swiper-slide d-flex">
+            <img data-src="{{ slide.url }}" class="mx-auto h-100 swiper-lazy" alt="">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination main-swiper-pagination"></div>
+        <div class="swiper-button-nav swiper-button-next swiper-button-white main-button-next"></div>
+        <div class="swiper-button-nav swiper-button-prev swiper-button-white main-button-prev"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ns-content mb-3">
+    <div class="ns-stretchy-wrapper ratio-20-2 thumbnail-wrapper">
+      <div class="swiper-button-nav swiper-button-next swiper-button-white h-100 thumbnail-button-next"></div>
+      <div class="swiper-button-nav swiper-button-prev swiper-button-white h-100 thumbnail-button-prev"></div>
+      <div class="swiper-container ppt-thumbnail">
+        <div class="swiper-wrapper">
+          {% for slide in lesson.presentation.slides.all %}
+          <div class="swiper-slide d-flex">
+            <img data-src="{{ slide.url }}" class="mx-auto h-100 swiper-lazy" alt="">
+            <div class="swiper-lazy-preloader"></div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="swiper-container ppt-fullscreen" id="ppt-fullscreen">
+    <div class="swiper-wrapper">
+      {% for slide in lesson.presentation.slides.all %}
+      <div class="swiper-slide d-flex align-items-center">
+        <div class="swiper-zoom-container">
+          <img data-src="{{ slide.url }}" class="mx-auto swiper-lazy" alt="">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-nav swiper-button-next swiper-button-white fullscreen-button-next"></div>
+    <div class="swiper-button-nav swiper-button-prev swiper-button-white fullscreen-button-prev"></div>
+    <div class="fullscreen-controller exit-fullscreen"></div>
+  </div>
+</div>

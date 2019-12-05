@@ -1,0 +1,26 @@
+{# 知享呼吸培训 -- 考试评定 Tab #}
+{% load static %}
+
+{% block main %}
+{% if not request.user_agent.is_mobile %}
+<div class="tab_cont">
+    <!-- 考试评定 examination-evaluation-->
+    <div class="training" id="examination-evaluation" {% if default_tab != 'd' %}style="display: none;"{% endif %}>
+        <div>
+            <p>参评学员只有全部完成本级别要求的培训课程（如一级医疗机构医生完成全部一级培训课程），并通过实名认证，才能参与最终考试。全国统一考试时间暂定为2019年8月中旬。</p>
+            <p>全国统一考试成绩将分别发送至各联盟分支机构负责人处，作为选手选拔参考指标。未在线上注册并参加全国统考的学员，将无法参加全国总决赛。</p>
+        </div>
+    </div>
+</div>
+{% elif request.user_agent.is_mobile %}
+<div class="mobile-tab-cont">
+    <!-- 考试评定 examination-evaluation-->
+    <div class="training" id="examination-evaluation" {% if default_tab != 'd' %}style="display: none;"{% endif %}>
+        <div>
+            <p>参评学员只有全部完成本级别要求的培训课程（如一级医疗机构医生完成全部一级培训课程），并通过实名认证，才能参与最终考试。全国统一考试时间暂定为2019年8月中旬。</p>
+            <p>全国统一考试成绩将分别发送至各联盟分支机构负责人处，作为选手选拔参考指标。未在线上注册并参加全国统考的学员，将无法参加全国总决赛。</p>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

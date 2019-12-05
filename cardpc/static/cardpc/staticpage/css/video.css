@@ -1,0 +1,83 @@
+div.video-play {
+  width: 100%;
+  background-color: #595959;
+}
+
+div.video-play > div {
+  width: 1280px;
+  margin: auto;
+}
+
+div.video-intr p {
+  font-size: 14px;
+  line-height: 1.64;
+  color: #333;
+}
+
+div.video-play > div > p {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+div.video-intr {
+  width: 100%;
+  background-color: #faf5e2;
+  padding-top: 25px;
+  padding-bottom: 73px;
+}
+
+div.video-intr > div {
+  width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.video-intr > div > div {
+  background: #fff;
+}
+
+div.video-intr > div div:first-child {
+  width: 1006px;
+  box-sizing: border-box;
+  padding: 30px;
+  padding-bottom: 226px;
+}
+
+div.video-intr > div div:first-child img {
+  float: left;
+  margin-right: 20px;
+}
+
+div.video-intr > div div:last-child {
+  width: 257px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.video-intr > div div:last-child img:first-child {
+  margin-bottom: 30px;
+}
+
+div.video-intr h2 {
+  width: 705px;
+  height: 44px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #3093e3;
+  border-bottom: solid 1px #eaeaf0;
+}
+
+div.video-intr h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #45a0ea;
+  margin-bottom: 27px;
+  margin-top: 27px;
+}

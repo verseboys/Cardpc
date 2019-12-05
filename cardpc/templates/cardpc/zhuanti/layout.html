@@ -1,0 +1,41 @@
+{% load menu from zhuanti_tags %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="keywords" content="">
+    <meta name="copyright" content="中国基层呼吸疾病防治联盟">
+    <link rel="shortcut icon" href="{% static 'cardpc/img/favicon.png' %}">
+{#    {% render_bundle 'cardpc' 'css' %}#}
+    {% block head_more %}{% endblock %}
+  </head>
+  <body data-page="{% block page-name %}{% endblock %}">
+    {% block body %}
+    <div>
+      <div id="header">
+      {% block header %}{% endblock %}
+      </div>
+      <div id="menu">
+          {% load menu %}
+      </div>
+
+      <div id="main">
+      {% block main %}{% endblock %}
+      </div>
+
+      <div id="footer">
+{#      {% block footer %}{% include 'cardpc/zhuanti/footer.html' %}{% endblock %}#}
+      </div>
+    </div>
+    {% endblock body %}
+
+    {% block body_more %}{% endblock %}
+  </body>
+</html>

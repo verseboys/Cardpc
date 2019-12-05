@@ -1,0 +1,20 @@
+# settings_local.example.py 中默认数据库为 db.sqlite3，因此忽略该文件，防止开发者意外提交
+db.sqlite3
+# 项目本地配置文件，含有隐私数据，不允许提交
+nsproject/settings_local.py
+
+# python 编译缓存文件
+*.py[cd]
+__pycache__/
+
+node_modules/
+
+# 我们将设置所有编译生成的文件都放到 build/（包括 webpack 编译的，以及 ./manage.py collectstatic 复制的目的地）
+/build/
+# MEDIA_ROOT 指向 data/ 目录
+/data/
+venv/
+
+\.vs/cardpc/v16/
+
+\.vs/

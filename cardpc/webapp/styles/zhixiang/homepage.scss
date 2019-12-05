@@ -1,0 +1,152 @@
+[data-css~="zhixiang-homepage"] {
+  // 知享首页 zhixiang/homepage.html
+  .banner {
+    width: 100%;
+    height: 315px;
+    background: url("/static/cardpc/img/copd_banner.jpg") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+
+    h2 {
+      width: 747px;
+      height: 251px;
+      background: url("/static/cardpc/img/copd_banner2.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 7%;
+      left: 25%;
+    }
+  }
+
+  #container {
+    width: 1180px;
+    margin: 22px auto;
+
+    .main_left {
+      width: 865px;
+      height: 725px;
+      background: #fff;
+
+      h3 {
+        font-size: 24px;
+        font-weight: 500;
+        color: #403f40;
+        margin-bottom: 14px;
+      }
+
+      .introduction {
+        padding: 39px 48px 0 37px;
+
+        p {
+          font-size: 16px;
+          color: #403f40;
+          line-height: 2;
+        }
+      }
+    }
+
+    .main_right {
+      margin-left: 20px;
+
+      a {
+        display: block;
+        width: 300px;
+        height: 65px;
+        border-radius: 3px;
+        background-color: #f5a623;
+        text-align: center;
+        line-height: 65px;
+        color: #fff;
+        font-size: 20px;
+      }
+
+      .public_code {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 121px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px 0 #d8d8d8;
+        margin-top: 16px;
+
+        img :first-child {
+          margin-right: 20px;
+          width: 87px;
+        }
+
+        img :last-child {
+          width: 120px;
+        }
+      }
+    }
+  }
+
+  // 移动端 首页
+  .mobile-banner {
+    width: 100%;
+    height: 200px;
+    background: url("/static/cardpc/img/copd_banner_mobile.jpg") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .mobile-container {
+    > .mobile-introduct {
+      background: #fff;
+      width: 100%;
+      height: 49px;
+      line-height: 49px;
+      border-bottom: 1px solid #d8d8d8;
+
+      a {
+        border-bottom: 4px solid #3260b6;
+        color: #3260b6;
+        font-size: 16px;
+        display: inline-block;
+        line-height: 45px;
+        margin-left: 23px;
+      }
+    }
+
+    .mobile-summary {
+      width: 100%;
+      height: 90px;
+      background: #fff;
+      padding: 20px;
+    }
+
+    > .introduction {
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+
+      h3 {
+        font-size: 16px;
+        color: #333;
+        font-weight: bolder;
+        line-height: 38px;
+      }
+
+      p {
+        color: #404040;
+        font-size: 15px;
+      }
+    }
+
+    .mt-10 {
+      margin-top: 10px;
+    }
+
+    > a {
+      width: 100%;
+      height: 50px;
+      display: inline-block;
+      line-height: 50px;
+      background-color: #3260b6;
+      color: #fff;
+      text-align: center;
+      font-size: 17px;
+      position: relative;
+    }
+  }
+}

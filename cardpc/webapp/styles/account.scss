@@ -1,0 +1,420 @@
+[data-css="account"] {
+  // 登录、注册、重置密码相关 account/*.html
+  .clearfix {
+    &::after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+  }
+
+  .fade-enter-active {
+    animation: zoomIn 1s;
+  }
+
+  .fade-leave-active {
+    animation: zoomOut 1s;
+  }
+
+  @-webkit-keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes zoomOut {
+    from {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes zoomOut {
+    from {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  .zoom-in {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+  }
+
+  .zoom-out {
+    -webkit-animation-name: zoomOut;
+    animation-name: zoomOut;
+  }
+
+  .register-status {
+    .status-icon {
+      margin: 54px auto 28px;
+      width: 64px;
+      height: 64px;
+      background: url("../img/check-circle-green.svg") no-repeat;
+      background-size: contain;
+    }
+
+    p {
+      margin: 0 auto 16px;
+      width: 214px;
+      height: 24px;
+      line-height: 24px;
+      text-align: left;
+      font-size: 18px;
+    }
+
+    a {
+      color: #3260b6;
+    }
+  }
+
+  .maskdocs {
+    @include media-breakpoint-down(sm) {
+      .docs {
+        width: 98% !important;
+      }
+    }
+
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(27, 27, 27, 0.8);
+    padding: 60px 0;
+    z-index: 99999;
+
+    .docs {/* stylelint-disable-line no-descending-specificity */
+      position: relative;
+      width: 700px;
+      height: 100%;
+      margin: 0 auto;
+      background: #fff;
+      overflow: auto;
+      border-radius: 10px;
+
+      .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 24px;
+        height: 24px;
+        background: url("../img/close.png") no-repeat center center;
+        cursor: pointer;
+      }
+
+      h1 {
+        margin-top: 50px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      p {
+        margin: 10px 40px;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  /* 登录注册头部 */
+  .account-header {
+    // position: relative;
+    height: 147px;
+    background-color: #f5f5f5;
+    z-index: 10;
+
+    .account-header-content {
+      margin: 0 auto;
+      width: 1400px;
+      height: 147px;
+
+      .account-header-banner {
+        padding-top: 36px;
+        padding-left: 209px;
+      }
+    }
+  }
+
+  .account-main {
+    @include media-breakpoint-down(sm) {
+      background: #fff;
+    }
+    // position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+    // top: -147px;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background: url("../../static/cardpc/img/login_bg.png") no-repeat center top;
+    background-size: cover;
+  }
+
+  .account-form-box {
+    @include media-breakpoint-down(sm) {
+      top: 40%;
+      width: 100%;
+    }
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    z-index: 20;
+    padding: 34px 36px 72px;
+    width: 452px;
+    height: 380px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+  }
+
+  .register-box {
+    height: 470px;
+  }
+
+  .forgetpwd-box {
+    height: 444px;
+  }
+
+  .login-smscode {
+    .login-link {
+      a {
+        color: #3260b6;
+      }
+
+      span {
+        color: #3260b6;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .login {
+    h2 {
+      margin-bottom: 0;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .agreement {
+      font-size: 14px;
+      color: #666;
+
+      span {
+        color: #3260b6;
+        cursor: pointer;
+      }
+    }
+
+    .error {
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+
+      margin-bottom: 9px;
+      width: 379px;
+      height: 29px;
+      line-height: 29px;
+      font-size: 12px;
+      color: #fff;
+
+      p {
+        height: 29px;
+        line-height: 29px;
+        text-align: center;
+        background-color: #ea5555;
+      }
+    }
+
+    .login-link {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+
+      a {
+        color: #3260b6;
+      }
+
+      .auto-login {
+        input {
+          vertical-align: middle;
+        }
+
+        label {
+          cursor: pointer;
+        }
+      }
+
+      p {
+        span,
+        a {
+          color: #3260b6;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .input-group {
+      .input-item {
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        input {
+          border: none;
+          border-radius: 2px;
+          padding-left: 25px;
+          width: 379px;
+          height: 50px;
+          font-size: 14px;
+          background-color: #f0f6ff;
+        }
+
+        input::-webkit-input-placeholder {
+          color: #999;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        .input-item {
+          width: 100%;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+
+      .validate {
+        width: 379px;
+        height: 50px;
+
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+
+        div {
+          input {
+            width: 261px;
+          }
+        }
+
+        .validate-btn {
+          width: 103px;
+          height: 50px;
+          line-height: 50px;
+        }
+
+        .disable {
+          color: #666;
+          background-color: #d8d8d8;
+        }
+
+        .validate-input {
+          position: relative;
+
+          img {
+            position: absolute;
+            top: 19px;
+            right: 15px;
+            width: 17px;
+            height: 12px;
+          }
+        }
+
+        @include media-breakpoint-down(sm) {
+          .validate-input {
+            width: 60%;
+
+            input {
+              width: 100%;
+            }
+          }
+
+          .float-right {
+            width: 35%;
+
+            .validate-btn {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .switch-login {
+      text-align: right;
+      font-size: 14px;
+      color: #3260b6;
+      cursor: pointer;
+    }
+
+    button {
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 2px;
+      width: 100%;
+      height: 46px;
+      line-height: 46px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #004ea2;
+      cursor: pointer;
+    }
+  }
+}

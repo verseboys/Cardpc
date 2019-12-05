@@ -1,0 +1,23 @@
+<div id="course-info" data-css="course-info">
+  <ul class="nav nav-pills">
+    <li><a href="#course-introduction" data-toggle="tab">课程简介</a></li>
+    <li><a href="#course-lessons" data-toggle="tab" class="active">课程目录</a></li>
+  </ul>
+  <div class="tab-content clearfix mt-3">
+    <div class="tab-pane" id="course-introduction">
+      {{ lesson.summary | safe }}
+    </div>
+    <div class="tab-pane active" id="course-lessons">
+      {% for l in course_lessons %}
+      <a
+        href="{% url 'zhixiang-lesson' id=l.id %}"
+        class="{% if l.id == lesson.id %}current{% endif %} d-flex align-items-center"
+      >
+        <span class="lesson-number flex-shrink-0">第 {{ forloop.counter }} 节</span>
+        <span class="lesson-title flex-grow-1">{{ l.title }}</span>
+        <span class="lesson-status {% if l.watched %}watched{% endif %} mr-2 flex-shrink-0"></span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

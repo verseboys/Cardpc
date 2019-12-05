@@ -1,0 +1,459 @@
+[data-css~="zhixiang-training"] {
+  .banner {
+    width: 100%;
+    height: 315px;
+    background: url("/static/cardpc/img/copd_banner.jpg") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+
+    h2 {
+      width: 747px;
+      height: 251px;
+      background: url("/static/cardpc/img/copd_banner2.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 7%;
+      left: 25%;
+    }
+  }
+
+  .tab_nav {
+    width: 1180px;
+    margin: 0 auto;
+
+    .tab_nav_left {
+      width: 851px;
+      margin-top: 22px;
+      padding-bottom: 50px;
+      background: #fff;
+      box-shadow: 0 2px 4px 0 #eaeaf0;
+      margin-bottom: 100px;
+
+      ul {
+        width: 851px;
+        height: 50px;
+
+        li {
+          float: left;
+          list-style-type: none;
+          height: 50px;
+          line-height: 50px;
+
+          a {
+            display: block;
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            background: #d8d8d8;
+            text-align: center;
+            width: 203px;
+            position: relative;
+            font-size: 16px;
+            text-decoration: none;
+            color: #666;
+          }
+
+          a::after {
+            content: "";
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-left: 25px solid #d8d8d8;
+            position: absolute;
+            right: -25px;
+            top: 0;
+            z-index: 1;
+          }
+
+          a::before {
+            content: "";
+            border-top: 25px solid #d8d8d8;
+            border-bottom: 25px solid #d8d8d8;
+            border-left: 25px solid white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #3260b6 !important;
+          }
+
+          a:hover {
+            background: #3260b6;
+            color: #fff;
+          }
+
+          a:hover::after {
+            border-left-color: #3260b6;
+            color: #fff;
+          }
+
+          a:hover::before {
+            border-top-color: #3260b6;
+            border-bottom-color: #3260b6;
+            color: #fff;
+          }
+
+          a.train_nav_active {
+            background: #3260b6 !important;
+            color: rgb(255, 255, 255) !important;
+          }
+
+          a.train_nav_active_after::after {
+            content: "";
+            border-top: 25px solid rgba(0, 0, 0, 0);
+            border-bottom: 25px solid rgba(0, 0, 0, 0);
+            border-left: 25px solid #3260b6;
+            position: absolute;
+            right: -25px;
+            top: 0;
+            z-index: 1;
+          }
+
+          a.train_nav_active_before::before {
+            content: "";
+            border-top: 25px solid #3260b6;
+            border-bottom: 25px solid #3260b6;
+            border-left: 25px solid rgb(255, 255, 255);
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+
+        li:first-child a::before {
+          display: none;
+        }
+
+        li:last-child {
+          a::after {
+            display: none;
+          }
+        }
+      }
+
+      .tab_cont {
+        .training {
+          span {
+            color: #45a0ea;
+            cursor: pointer;
+          }
+        }
+
+        #curriculum-investigation {
+          p {
+            line-height: 30px;
+            padding: 50px 74px;
+            text-align: left;
+          }
+
+          a {
+            width: 241px;
+            height: 57px;
+            line-height: 57px;
+            text-align: center;
+            border-radius: 2px;
+            border: solid 1px #f5a623;
+            display: block;
+            color: #f5a623;
+            margin: 0 auto;
+            margin-bottom: 88px;
+          }
+        }
+
+        #training-course {
+          .training_course {
+            margin: 30px;
+
+            .table {
+              .thead {
+                padding: 12px 0;
+
+                span {
+                  width: 223px;
+                  height: 142px;
+                  display: block;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+
+                .course_describe {
+                  color: #3b3c3d;
+                  font-size: 16px;
+                  padding-left: 32px;
+                  width: 555px;
+
+                  h2 {
+                    font-size: 20px;
+                    line-height: 36px;
+                  }
+
+                  .ellipsis {
+                    p {
+                      margin-bottom: 0;
+                    }
+                  }
+                }
+              }
+
+              &:hover {
+                background: #f8fafc;
+              }
+            }
+          }
+        }
+
+        #qualification-authentication,
+        #examination-evaluation {
+          div {
+            padding: 54px 80px 50px;
+
+            p {
+              line-height: 30px;
+              text-align: left;
+              text-indent: 2em;
+              color: #403f40;
+            }
+
+            a {
+              width: 241px;
+              height: 57px;
+              line-height: 57px;
+              text-align: center;
+              border-radius: 2px;
+              border: solid 1px #f5a623;
+              display: block;
+              color: #f5a623;
+              margin: 46px auto;
+              margin-bottom: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    .tab_nav_right {
+      margin-left: 20px;
+
+      .public_code {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 327px;
+        height: 142px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px 0 #d8d8d8;
+        margin-top: 20px;
+
+        img :first-child {
+          margin-right: 20px;
+          width: 87px;
+        }
+
+        img :last-child {
+          width: 120px;
+        }
+      }
+    }
+
+    .dialog {
+      width: 476px;
+      height: 289px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.31);
+      background-color: #fff;
+      position: absolute;
+      left: 35%;
+      top: 50%;
+      z-index: 9;
+
+      button {
+        width: 131px;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        background-color: #004ea1;
+        border-radius: 4px;
+        border: none;
+        border: 1px solid #004ea1;
+        color: #fff;
+        font-size: 16px;
+        margin-left: 35%;
+        margin-top: 10%;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 80px;
+        text-align: center;
+        margin-top: 50px;
+      }
+    }
+  }
+
+  // 移动端 zhixiang/training.mobile
+  .mobile-banner {
+    width: 100%;
+    height: 200px;
+    background: url("/static/cardpc/img/copd_banner_mobile.jpg") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .mobile-tab-nav {
+    width: 100%;
+
+    .mobile-tab {
+      width: 100%;
+
+      .mobile-summary {
+        width: 100%;
+        height: 90px;
+        background: #fff;
+        padding: 20px;
+        font-size: 18px;
+      }
+
+      .mobile-uls {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: #fff;
+        border-bottom: 2px solid #d8d8d8;
+        margin-bottom: 0;
+
+        > li {
+          flex: 1;
+          text-align: center;
+          font-size: 16px;
+
+          a {
+            display: block;
+          }
+
+          > a.train_nav_active {
+            color: #45a0ea;
+            border-bottom: 4px solid #45a0ea;
+            line-height: 45px;
+            display: inline-block;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .mobile-tab-cont {
+        width: 100%;
+        background: #fff;
+        margin-top: 10px;
+
+        .training {
+          padding: 20px;
+
+          p {
+            padding: 0 20px;
+            margin-bottom: 0;
+            font-size: 14px;
+          }
+
+          .mobile-btn > a {
+            width: 100%;
+            height: 50px;
+            display: inline-block;
+            line-height: 50px;
+            color: #fff;
+            text-align: center;
+            font-size: 17px;
+            position: relative;
+            margin-top: 73px;
+          }
+
+          a.mobile-join {
+            background-color: #3260b6;
+          }
+
+          a.mobile-ongoing {
+            background-color: #999;
+          }
+
+          a.mobile-success {
+            background-color: #03a675;
+          }
+
+          a.mobile-fail {
+            background-color: #ee7833;
+          }
+
+          .training_course {
+            width: 100%;
+
+            .mobile-table {
+              border-bottom: 1px solid #eaeaf0;
+              padding: 10px;
+
+              a {
+                .mobile-thead {
+                  span {
+                    width: 30%;
+                    height: 90px;
+
+                    img {
+                      width: 100%;
+                      height: 100%;
+                    }
+                  }
+
+                  .course_describe {
+                    width: 70%;
+
+                    h2 {
+                      font-size: 16px;
+                      padding-top: 12px;
+                      padding-left: 23px;
+                      color: #333;
+                    }
+                  }
+                }
+              }
+            }
+
+            .mobile-table:last-child {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+
+    .mobile-dialog {
+      width: 80%;
+      height: 145px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.31);
+      background-color: #fff;
+      position: absolute;
+      left: 10%;
+      top: 36%;
+      z-index: 9;
+
+      > button {
+        width: 60px;
+        height: 38px;
+        line-height: 38px;
+        text-align: center;
+        background-color: #004ea1;
+        border-radius: 4px;
+        border: none;
+        border: 1px solid #004ea1;
+        color: #fff;
+        font-size: 16px;
+        margin-left: 60%;
+        margin-top: -6%;
+      }
+
+      > p {
+        font-size: 18px;
+        line-height: 80px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{# 花絮集锦页 #}
+{% extends './_base.html' %}
+{% load static %}
+
+{% block data-js %}project project-gallery{% endblock %}
+{% block data-css %}project project-gallery{% endblock %}
+
+{% block main %}
+<div class="ns-content main-content">
+  <div class="row p-4 gallery-list m-0">
+  {% for image in images %}
+    <div class="col-12 col-sm-12 col-md-6 col-lg-3 pl-3 pr-3 mb-3">
+      <div class="image-box">
+        <img class="img-fluid w-100" src="{{ image.url }}">
+        <p class="image-title font-weight-bold p-1">{{ image.title }}</p>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+
+  {% include './pagination.html' with page=images %}
+</div>
+{% endblock %}

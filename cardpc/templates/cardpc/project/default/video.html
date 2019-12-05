@@ -1,0 +1,53 @@
+{# 视频播放页 #}
+{% extends './_base.html' %}
+{% load static %}
+
+{% block data-js %}project project-video{% endblock %}
+{% block data-css %}project project-video{% endblock %}
+
+{% block main %}
+
+{% include 'media/widgets/video-player.html' %}
+{% comment %} 
+<div class="ns-content row align-items-start pt-0">
+  {# 在大屏幕上，课程信息与侧边栏左右排列，小屏幕上上下排列 #}
+  <div class="course-info-container col-sm-9 col-12 pl-0 pr-sm-2 pr-0 pt-5">
+    <h2>直播简介</h2>
+    <hr>
+    <div id="video-info">
+      <h3>视频介绍</h3>
+      {{ page.introduction | safe }}
+      <h3>讲者介绍</h3>
+      {{ page.teacher_introduction | safe }}
+    </div>
+  </div>
+  <div class="course-aside col-sm-3 col-12 px-2 py-3 mt-2 mt-sm-0 d-flex bg-white">
+    <div class="mx-auto">
+      <img src="{% static 'cardpc/img/cardpc-wechat-mp-qrcode.png' %}">
+      <img src="{% static 'cardpc/img/cardpc-wechat-mp-ad.png' %}">
+    </div>
+  </div>
+<div> {% endcomment %}
+<div class="ns-content align-items-start pt-0">
+  <div class="row m-0">  
+    {# 在大屏幕上，课程信息与侧边栏左右排列，小屏幕上上下排列 #}
+    <div class="course-info-container col-sm-9 col-12 pt-5">
+      <h2>直播简介</h2>
+      <hr>
+      <div id="video-info">
+        <h3 class="pt-2 pb-2">视频介绍</h3>
+        {{ page.introduction | safe }}
+        <h3 class="pt-2 pb-2">讲者介绍</h3>
+        {{ page.teacher_introduction | safe }}
+      </div>
+    </div>
+    <div class="course-aside col-sm-3 col-12 mt-2 p-0">
+      <div class="px-2 py-3 ml-0 ml-md-2 bg-white text-center">
+        <img src="{% static 'cardpc/img/cardpc-wechat-mp-qrcode.png' %}">
+        <img src="{% static 'cardpc/img/cardpc-wechat-mp-ad.png' %}">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

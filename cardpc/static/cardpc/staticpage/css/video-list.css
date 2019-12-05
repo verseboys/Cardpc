@@ -1,0 +1,43 @@
+/* 视频部分样式 */
+div.video {
+  width: 1200px;
+  height: 868px;
+  background: #fff;
+  margin: 28px auto 229px;
+}
+
+div.video > ul {
+  padding: 20px 6px 72px 18px;
+}
+
+div.video > ul > li > a {
+  width: 280px;
+  height: 313px;
+  box-shadow: 0 2px 4px 0 #d8d8d8;
+  background: #fff;
+  float: left;
+  margin: 24px 6px 0 6px;
+}
+
+div.video > ul > li > a div:first-child {
+  position: relative;
+}
+
+div.video > ul > li > a div:first-child > img {
+  width: 269px;
+  height: 196px;
+  margin-left: 5.8px;
+  margin-top: 6.8px;
+}
+
+div.video > ul > li > a div:nth-child(2) {
+  font-size: 14px;
+  color: #333;
+  padding: 17px 8px 15px 10px;
+}
+
+div.video > ul > li > a div:last-child {
+  color: #999;
+  font-size: 14px;
+  padding: 0 10px;
+}

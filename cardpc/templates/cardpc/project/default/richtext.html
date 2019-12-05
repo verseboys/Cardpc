@@ -1,0 +1,14 @@
+{# 富文本页面 #}
+{% extends './_base.html' %}
+
+{% block data-js %}project project-richtext-page{% endblock %}
+{% block data-css %}project project-richtext-page{% endblock %}
+
+{% block main %}
+<div class="ns-content main-content">
+  <div class="p-3 pt-5">
+    <h1>{{ page.title }}</h1>
+    <div data-css="project-richtext">{{ page.content|safe }}</div>
+  </div>
+</div>
+{% endblock %}

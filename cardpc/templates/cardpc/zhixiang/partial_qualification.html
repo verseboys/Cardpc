@@ -1,0 +1,48 @@
+{# 知享呼吸培训 -- 资格认证 Tab #}
+{% load static %}
+
+{% block main %}
+{% if not request.user_agent.is_mobile %}
+<div class="tab_cont">
+    <!-- 资格认证 qualification-authentication -->
+    <div class="training" id="qualification-authentication" {% if default_tab != 'c' %}style="display: none;"{% endif %}>
+        <div>
+            <p>2019年技能大赛项目面向一、二级医疗机构中执业注册为呼吸科、内科、急救医学、全科、护理医学专业的医疗卫生工作人员，开展针对性的呼吸疾病知识培训内容。</p>
+            <p>为保证考试的公平性、严肃性，请各参培学员提交执业医师资格证/护士执业证、医师执业证，项目组将对各位学员的考试资格进行审核，审核周期一般为3-5个工作日。</p>
+            <p>审核结果将通过短信/邮件方式发送至各位学员注册时填写的联系电话/邮箱，请留意查收。</p>
+            <!-- 按钮：1、未填表：立即参与  2、已填表待审核：认证中  3、已审核通过：认证成功  4、被驳回：立即参与 -->
+            {% if c.status == 1 %}
+            <a href="javascript:;" id="qualification_join_btn">立即参与</a>
+            {% elif c.status == 2 %}
+            <a href="javascript:;">认证中</a>
+            {% elif c.status == 3 %}
+            <a href="javascript:;">认证成功</a>
+            {% elif c.status == 4 %}
+            <a href="javascript:;" id="qualification_join_btn">审核失败，重新认证</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% elif request.user_agent.is_mobile %}
+<div class="mobile-tab-cont">
+    <!-- 资格认证 qualification-authentication -->
+    <div class="training" id="qualification-authentication" {% if default_tab != 'c' %}style="display: none;"{% endif %}>
+        <div class="mobile-btn">
+            <p>2019年技能大赛项目面向一、二级医疗机构中执业注册为呼吸科、内科、急救医学、全科、护理医学专业的医疗卫生工作人员，开展针对性的呼吸疾病知识培训内容。</p>
+            <p>为保证考试的公平性、严肃性，请各参培学员提交执业医师资格证/护士执业证、医师执业证，项目组将对各位学员的考试资格进行审核，审核周期一般为3-5个工作日。</p>
+            <p>审核结果将通过短信/邮件方式发送至各位学员注册时填写的联系电话/邮箱，请留意查收。</p>
+            <!-- 按钮：1、未填表：立即参与  2、已填表待审核：认证中  3、已审核通过：认证成功  4、被驳回：审核失败，重新认证 -->
+            {% if c.status == 1 %}
+            <a href="javascript:;" id="qualification_join_btn" class="mobile-join">立即参与</a>
+            {% elif c.status == 2 %}
+            <a href="javascript:;" class="mobile-ongoing">认证中</a>
+            {% elif c.status == 3 %}
+            <a href="javascript:;" class="mobile-success">认证成功</a>
+            {% elif c.status == 4 %}
+            <a href="javascript:;" id="qualification_join_btn" class="mobile-fail">审核失败，重新认证</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

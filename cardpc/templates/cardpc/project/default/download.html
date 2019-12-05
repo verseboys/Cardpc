@@ -1,0 +1,31 @@
+{# 文件下载页 #}
+{% extends './_base.html' %}
+{% load static %}
+{% block data-js %}project project-download{% endblock %}
+{% block data-css %}project project-download{% endblock %}
+
+{% block main %}
+<div class="ns-content main-content">
+  <div class="project-download">
+    <ul class="uls d-flex flex-wrap">
+      <li class="selected mb-1 p-1 px-3 mr-1">全部</li>
+      {% for tag in tags %}
+      <li class="mb-1 p-1 px-3 mr-1">{{ tag }}</li>
+      {% endfor %}
+    </ul>
+    <div class="project-download-file">
+      <div class="documents">
+        {% for document in documents %}
+        <div class="d-flex justify-content-between border-1 documents-item" data-tag="{{document.tag}}">
+          <div class="document-content">
+            <h3>{{ document.subject }}</h3>
+            <p>{{ document.publish_time|date:"Y-m-d" }}&nbsp;&nbsp;{{ document.description }}</p>
+          </div>
+          <div class="download-btn"><a href="{{ document.document.download_url }}" target="_blank">点击下载</a></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

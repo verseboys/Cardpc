@@ -1,0 +1,13 @@
+-r natureself/requirements.txt
+Django==2.2.1
+pytz==2018.9
+django-webpack-loader==0.6.0
+gunicorn==19.9.0
+raven==6.9.0
+django-cors-headers==2.4.0
+django-model-utils==3.1.2
+XlsxWriter==1.1.8
+
+# we install psycopg2 via 'apk add', version should be satisfied, so don't specify version here
+#psycopg2==2.7.5 --no-binary psycopg2
+#psycopg2 --no-binary psycopg2

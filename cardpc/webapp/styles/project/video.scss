@@ -1,0 +1,58 @@
+[data-css~="project-video"] {
+  // 专题视频详情页
+  #main {
+    padding: 0;
+  }
+
+  .video-container {
+    width: 100%;
+  }
+
+  #video-player {
+    background: #595959;
+    padding-top: 2rem;
+    color: #fff;
+
+    #media-share-widget {
+      color: #fff;
+    }
+  }
+
+  .course-info-container {
+    background: #fff;
+    font-size: 0.9rem;
+
+    h2,
+    h3 {
+      color: var(--color1);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+    }
+  }
+
+  // .course-aside {
+  //   img {
+  //     display: block;
+  //     width: 100%;
+  //   }
+  // }
+
+  // @include media-breakpoint-down(sm) {
+  //   .course-aside {
+  //     .wechat {
+  //       display: flex;
+  //     }
+
+  //     img {
+  //       display: inline-block;
+  //       width: atu;
+  //     }
+  //   }
+  // }
+}

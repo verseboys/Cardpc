@@ -1,0 +1,23 @@
+{% load render_bundle from webpack_loader %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>{% block title %}泽创天成{% endblock %}</title>
+    {% block favicon %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'webapp/img/natureself-1024.png' %}" />
+    {% endblock %}
+    {% block entry_css %}{% render_bundle 'account' 'css' %}{% endblock %}
+    {% block head_more %}{% endblock %}
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+    {% block entry_js %}{% render_bundle 'account' 'js' %}{% endblock %}
+    {% block body_more %}{% endblock %}
+  </body>
+</html>

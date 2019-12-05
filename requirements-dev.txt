@@ -1,0 +1,6 @@
+# this file contains dependencies only need in local dev env
+-r requirements.txt
+ipython
+ptpython
+pyflakes
+pylint

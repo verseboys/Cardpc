@@ -1,0 +1,24 @@
+{% extends "cardpc/_base.html" %}
+{% load static %}
+
+{% block data-js %}zhixiang-lesson{% endblock %}
+{% block data-css %}zhixiang zhixiang-lesson{% endblock %}
+
+{% block main %}
+
+{% include "media/widgets/presentation-player.html" %}
+
+<div class="ns-content row align-items-start">
+  {# 在大屏幕上，课程信息与侧边栏左右排列，小屏幕上上下排列 #}
+  <div class="course-info-container col-sm-9 col-12 pl-0 pr-sm-2 pr-0">
+    {% include "course/widgets/presentation-course-info.html" %}
+  </div>
+  <div class="course-aside col-sm-3 col-12 px-2 py-3 mt-2 mt-sm-0 d-flex bg-white">
+    <div class="mx-auto">
+      <img src="{% static 'cardpc/img/cardpc-wechat-mp-qrcode.png' %}">
+      <img src="{% static 'cardpc/img/cardpc-wechat-mp-ad.png' %}">
+    </div>
+  </div>
+</div>
+
+{% endblock %}

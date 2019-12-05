@@ -1,0 +1,28 @@
+{# 专题新闻列表页 #}
+{% extends './_base.html' %}
+
+{% block data-js %}project project-news-list{% endblock %}
+{% block data-css %}project project-news-list{% endblock %}
+
+{% block main %}
+<div class="ns-content main-content">
+  {% for news in news_list %}
+    <div class="row news-list-item border-bottom pt-3 pb-3">
+      <div class="col-sm-12 col-md-3 col-lg-3">
+        <a href="{{ news.url }}" class="d-block w-100"><img class="img-fluid w-100" src="{{ news.cover_picture.url }}"></a>
+      </div>
+      <div class="col-sm-12 col-md-9 col-lg-9 d-flex flex-column">
+        <h2 class="flex-shrink-0 news-title"><a href="{{ news.url }}">{{ news.title }}</a></h2>
+        {% if news.excerpt %}
+        <div class="h-100 summary" data-css="project-richtext">{{ news.excerpt|safe }}</div>
+        {% else %}
+        <div class="h-100 summary" data-css="project-richtext">{{ news.content|truncatechars_html:170 | safe}}</div>
+        {% endif %}
+        <div class="flex-shrink-1">{{ news.publish_time|date:"Y/m/d"}}</div>
+      </div>
+    </div>
+  {% endfor %}
+
+  {% include './pagination.html' with page=news_list %}
+</div>
+{% endblock %}

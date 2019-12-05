@@ -1,0 +1,72 @@
+{# 知享呼吸培训相关页面 #}
+{% extends "cardpc/_base.html" %}
+{% load static %}
+{% block data-js %}zhixiang-training{% endblock %}
+{% block data-css %}zhixiang zhixiang-training{% endblock %}
+
+{% block main %}
+	{% if not request.user_agent.is_mobile %}
+	<div class="banner"><h2></h2></div>
+  <div class="tab_nav d-flex">
+    <div class="tab_nav_left">
+      <ul class="uls">
+				<li class="train" style="width: 216px;">
+					<a class="tab_nav_a {% if default_tab == 'a' %} train_nav_active train_nav_active_after{% endif %}" href="#curriculum-investigation">1.课程调研</a>
+				</li>
+				<li class="data" style="width: 216px;">
+					<a class="tab_nav_a {% if default_tab == 'b' %} train_nav_active train_nav_active_after train_nav_active_before {% endif %}" href="#training-course">2.培训课程</a>
+				</li>
+				<li class="approve" style="width: 216px;">
+					<a class="tab_nav_a {% if default_tab == 'c' %} train_nav_active train_nav_active_after train_nav_active_before {% endif %}" href="#qualification-authentication">3.资格认证</a>
+				</li>
+				<li class="assess" style="width: 203px;">
+					<a class="tab_nav_a {% if default_tab == 'd' %} train_nav_active train_nav_active_before {% endif %}" href="#examination-evaluation">4.考试评定</a>
+				</li>
+      </ul>
+			{% include "cardpc/zhixiang/partial_investigation.html" %}
+			{% include "cardpc/zhixiang/partial_course.html" %}
+			{% include "cardpc/zhixiang/partial_qualification.html" %}
+			{% include "cardpc/zhixiang/partial_examination.html" %}
+    </div>
+    <div class="tab_nav_right">
+      <!-- 右部分：公众号二维码 -->
+			<div class="public_code">
+				<img src="{% static 'cardpc/img/cardpc-wechat-mp-qrcode.png' %}" alt="基层联盟"><img src="{% static 'cardpc/img/cardpc-wechat-mp-ad.png' %}" alt="扫码关注基层联盟公众号">
+			</div>
+    </div>
+		<div class="dialog" id="dialog" style="display: none;">
+			<p>参与调研后，才可参加培训！</p>
+			<button id="btn">确认</button>
+		</div>
+  </div>
+  {% elif request.user_agent.is_mobile %}
+	<div class="mobile-banner"></div>
+	<div class="mobile-tab-nav">
+    <div class="mobile-tab">
+      <ul class="mobile-uls d-flex">
+				<li class="mobile-train">
+					<a class="tab_nav_a {% if default_tab == 'a' %} train_nav_active {% endif %}" href="#curriculum-investigation">调研</a>
+				</li>
+				<li class="mobile-data">
+					<a class="tab_nav_a {% if default_tab == 'b' %} train_nav_active {% endif %}" href="#training-course">培训</a>
+				</li>
+				<li class="mobile-approve">
+					<a class="tab_nav_a {% if default_tab == 'c' %} train_nav_active {% endif %}" href="#qualification-authentication">认证</a>
+				</li>
+				<li class="mobile-assess">
+					<a class="tab_nav_a {% if default_tab == 'd' %} train_nav_active {% endif %}" href="#examination-evaluation">考试</a>
+				</li>
+      </ul>
+			<div class="mobile-summary">"知享呼吸"—全国基层医疗机构医护人员呼吸疾病知识和技能大赛</div>
+      {% include "cardpc/zhixiang/partial_investigation.html" %}
+			{% include "cardpc/zhixiang/partial_course.html" %}
+			{% include "cardpc/zhixiang/partial_qualification.html" %}
+			{% include "cardpc/zhixiang/partial_examination.html" %}
+    </div>
+		<div class="mobile-dialog" id="dialog" style="display: none;">
+			<p>参与调研后，才可参加培训！</p>
+			<button id="btn">确认</button>
+		</div>
+  </div>
+	{% endif %}
+{% endblock %}

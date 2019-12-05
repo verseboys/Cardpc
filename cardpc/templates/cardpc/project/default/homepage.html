@@ -1,0 +1,107 @@
+{# 专题首页 #}
+{% extends './_base.html' %}
+{% load static %}
+{% load django_patch %}
+
+{% block data-js %}project project-homepage{% endblock %}
+{% block data-css %}project project-homepage{% endblock %}
+
+{% block main %}
+<div class="ns-content main-content" style="background:none">
+  <div class="container main">
+    <div class="row mb-2">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 p-0">
+        <div class="ns-stretchy-wrapper ratio-20-8">
+          <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators justify-content-end">
+              {% for item in page.carousel_items.all %}
+              <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+              {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+              {% for item in page.carousel_items.all %}
+              <a href="{{ item.link_url }}" class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img class="img-fluid" src="{{ item.image.url }}" alt="">
+                <div class="carousel-title">
+                  <h5 class="pl-3">{{ item.title }}</h5>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">左</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">右</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="news-information mt-4 pt-2 pb-4">
+          <div class="container d-flex justify-content-between align-items-center mt-4 mb-4">
+            <ul class="nav" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">新闻资讯</a>
+              </li>
+            </ul>
+            <div class="flex-shrink-0">
+              <a href="{{ news_list_page.url }}">更多>></a>
+            </div>
+          </div>
+          <div class="tab-content container" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="row pane">
+                <div class="col-sm-12 col-md-5 pr-0 mb-2">
+                  <a href="javascript:void(0)" class="float-left"><img class="img-fluid" src="{{ news_list.0.cover_picture.url }}"></a>
+                </div>
+                <div class="col-sm-12 col-md-7">
+                  <div class="list-group">
+                    {% for news in news_list %}
+                    <a href="{{ news.url }}" class="list-group-item d-flex pt-1 pb-1 justify-content-between {% if forloop.first %}font-weight-bold pb-3 fon-16{% endif %}">
+                      <div class="text-truncate">{{ news.title }}</div>
+                      {% if not forloop.first %}
+                      <div class="flex-shrink-0 pl-2">{{ news.publish_time|date:"Y/m/d" }}</div>
+                      {% endif %}
+                    </a>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 meeting-summary">
+        <div class="card h-100 rounded-0">
+          <div class="d-flex card-header justify-content-center align-items-center rounded-0"><h2>简介</h2></div>
+          <div class="card-body pt-5 flex-column">
+            <div class="card-text mb-1" data-css="project-richtext">{{page.project.introduction|safe|patched_truncatechars_html:520}}</div>
+          </div>
+          <!-- <a href="javascript:void(0)" class="d-flex justify-content-end pr-3 pb-3">更多>></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if gallery_images %}
+  <div class="container mt-5 titbits-images pb-3">
+    <div class="row pt-5 pb-3">
+      <div class="col-12 text-center title">
+        <h2 class="font-weight-bold">花 <span>/</span> 絮 <span>/</span> 集 <span>/</span> 锦</h2>
+      </div>
+    </div>
+    <div class="row pl-3 pr-3">
+      {% for image in gallery_images %}
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 pl-1 pr-1 mb-3">
+        <a href="javascript:void(0)" class="d-block">
+          <img class="img-fluid" src="{{ image.url }}">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row justify-content-end pr-3 pb-3"><a href="{{ gallery_page.url }}">更多>></a></div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

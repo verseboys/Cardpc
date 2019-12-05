@@ -1,0 +1,26 @@
+/* 会议简介部分样式 */
+div.metting_intr_container {
+  width: 958px;
+  min-height: 943px;
+  background: #fff;
+  margin: 13px auto 407px;
+}
+
+div.metting_intr_container > div {
+  padding-top: 43px;
+  margin-left: 57px;
+  margin-right: 72px;
+  padding-bottom: 40px;
+}
+
+div.metting_intr_container > div > p {
+  text-indent: 2em;
+  font-size: 18px;
+  line-height: 40px;
+  color: #403f40;
+  letter-spacing:3px;
+}
+
+div.metting_intr_container > div > h2 {
+  padding-bottom: 43px;
+}

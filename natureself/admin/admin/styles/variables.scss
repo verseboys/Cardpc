@@ -1,0 +1,21 @@
+$menu-text: #bfcbd9;
+$menu-text-active: #409eff;
+$submenu-text-active :#f4f4f5; // https://github.com/ElemeFE/element/issues/12951
+
+$menu-background: #304156;
+$menu-background-hover: #263445;
+
+$submenu-background: #1f2d3d;
+$submenu-background-hover: #001528;
+
+/* stylelint-disable */
+:export {
+  menutext: $menu-text;
+  menutextactive: $menu-text-active;
+  submenutextactive: $submenu-text-active;
+  menubackground: $menu-background;
+  menubackgroundhover: $menu-background-hover;
+  submenubackground: $submenu-background;
+  submenubackgroundhover: $submenu-background-hover;
+}
+/* stylelint-enable */

@@ -1,0 +1,15 @@
+python-magic==0.4.15
+requests==2.21.0
+aliyun-python-sdk-core==2.13.4
+django-model-utils==3.1.2
+chardet==3.0.4
+jsonfield==2.0.2
+django-user-agents==0.3.2
+
+# required by natureself.django.notification
+# parsing <img> src attr to inject inline image within email content
+beautifulsoup4==4.7.1
+# convert embedded css to inline css, many email client does not support embedded css
+premailer==3.4.0
+# minify email content
+htmlmin==0.1.12

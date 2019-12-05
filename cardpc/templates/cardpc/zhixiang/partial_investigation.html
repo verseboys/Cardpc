@@ -1,0 +1,32 @@
+{# 知享呼吸培训 -- 课程调研 Tab #}
+{% load static %}
+
+{% block main %}
+{% if not request.user_agent.is_mobile %}
+<div class="tab_cont">
+    <!-- 课程调研 curriculum-investigation -->
+    <div class="training" id="curriculum-investigation" {% if default_tab != 'a' %}style="display: none;"{% endif %}>
+        <p>为了解现阶段我国基层呼吸疾病防治现状，有针对性地制定行动计划，推进基层医疗机构医护人员对慢性呼吸疾病知识水平的提高，技能大赛项目在培训前需对所有参培学员进行基层常见呼吸疾病知识调研。</p>
+        {% if a.status == 1 %}
+            <a href="javascript:;" id="investigation_join_btn">立即参与</a>
+        {% elif a.status == 2 %}
+            <a href="javascript:;">已完成</a>
+        {% endif %}
+    </div>
+</div>
+{% elif request.user_agent.is_mobile %}
+<div class="mobile-tab-cont">
+    <!-- 课程调研 curriculum-investigation -->
+    <div class="training" id="curriculum-investigation" {% if default_tab != 'a' %}style="display: none;"{% endif %}>
+        <div class="mobile-btn">
+            <p>为了解现阶段我国基层呼吸疾病防治现状，有针对性地制定行动计划，推进基层医疗机构医护人员对慢性呼吸疾病知识水平的提高，技能大赛项目在培训前需对所有参培学员进行基层常见呼吸疾病知识调研。</p>
+            {% if a.status == 1 %}
+                <a href="javascript:;" id="investigation_join_btn" class="mobile-join">立即参与</a>
+            {% elif a.status == 2 %}
+                <a href="javascript:;" class="mobile-ongoing">已完成</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

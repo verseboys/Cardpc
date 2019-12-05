@@ -1,0 +1,64 @@
+{% extends 'cardpc/_base.html' %}
+
+{% block title %}{{ page.page_title }} - {{ page.project.title }} - 中国基层呼吸疾病防治联盟 - 官方网站{% endblock %}
+{% load static %}
+
+{% block head_more %}
+<style>
+:root {
+  --color1: {{ project.colors.color1 }};
+  --color2: {{ project.colors.color2 }};
+  --color3: {{ project.colors.color3 }};
+}
+</style>
+{% endblock %}
+
+{% block header %}
+<div class="banner-container"
+  {% if project.banner_background %}
+     style="background-image: url({{ project.banner_background.url }}); background-size: cover;"
+  {% else %}
+  style="background-color: var(--color3);"
+  {% endif %}
+  >
+  <div class="ns-content">
+    <img class="banner-image d-block mx-auto" src="{{ project.banner.url }}">
+  </div>
+</div>
+<div class="nav-container">
+  <div class="ns-content py-0">
+    <nav class="navbar navbar-expand-md p-0">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          {% for item in menu %}
+          <li>
+            <a class="nav-link pt-0 pb-0 {% if item.active %}active{% endif %}" href="{{ item.get_url }}">{{ item.get_text }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="ns-content">
+  <div class="row pt-5 pb-3 m-0">
+    <div class="col-sm-12 col-md-9 col-lg-10 pr-0 ">
+      <p class="mb-4">友情链接<a href="http://www.csrd.org.cn/cn/" class="ml-3" target="_blank">中华医学会呼吸病学分会</a><a href="https://www.theipcrg.org" class="ml-3" target="_blank">国际基层呼吸联盟</a></p>
+      <div class="clearfix">
+        <p class="float-left mr-3">京ICP备16045582号 京公网安备 11010502031203号</p>
+        <p class="float-left">Copyright © 2017-2019 中国基层呼吸疾病防治联盟</p>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-2 pl-5 pr-5 d-sm-none d-md-block text-right">
+        <img class="img-fluid" src="{% static 'cardpc/img/cardpc-wechat-mp-qrcode.png' %}" alt="二维码">
+    </div>
+  </div>
+</div>
+{% endblock %}

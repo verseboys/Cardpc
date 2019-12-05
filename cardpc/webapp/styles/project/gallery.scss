@@ -1,0 +1,15 @@
+[data-css~="project-gallery"] {
+  // 专题花絮集锦页
+  .gallery-list {
+    .image-box {
+      color: #000;
+
+      .image-title {
+        font-size: 1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

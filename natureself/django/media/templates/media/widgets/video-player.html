@@ -1,0 +1,22 @@
+{% load static %}
+<div id="video-player" class="d-flex flex-column justify-content-center" data-css="video-player">
+  <div class="ns-content d-flex align-items-center">
+    <h2 class="flex-grow-1 video-title">{{ page.video.title }}</h2>
+    {% include './share-widget.html' with background="light" %}
+  </div>
+
+  <div class="ns-content video-container d-flex align-items-center">
+    <div class="ns-stretchy-wrapper ratio-16-9">
+      <div id="polyv-player"></div>
+    </div>
+  </div>
+</div>
+<script src="//player.polyv.net/script/player.js"></script>
+<script>
+  var player = polyvPlayer({
+    wrap: '#polyv-player',
+    vid: '{{ page.video.vid }}',
+    width: 'auto',
+    height: '100%',
+  });
+</script>

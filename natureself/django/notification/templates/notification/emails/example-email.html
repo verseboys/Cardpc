@@ -1,0 +1,64 @@
+{% load static %}
+<html><body>
+<div class="main">
+  <div class="header">
+    <img class="brand-logo" src="{% static 'webapp/img/natureself-256.png' %}">
+    <h1 class="brand-title">泽创天成邮件系统</h1>
+  </div>
+  <div class="content">
+    <h2>{{ username }}</h2>
+    <p>
+    这是一封来自泽创天成的测试邮件。
+    </p>
+  </div>
+</div>
+
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.main {
+  width: 400px;
+  border: 1px solid #cfe3dc;
+}
+
+.header {
+  width: 100%;
+  height: 48px;
+  background-color: #dbfed4;
+  padding: 8px;
+  display: flex;
+}
+
+.brand-logo {
+  height: 32px;
+  width: 32px;
+}
+
+.brand-title {
+  color: #63b161;
+  line-height: 32px;
+  font-size: 24px;
+  margin: auto 10px;
+}
+
+.content {
+  padding: 8px;
+  background-color: #f1fff7;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 0.5em 0;
+}
+
+p {
+  font-size: 16px;
+}
+</style>
+</body></html>

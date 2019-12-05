@@ -1,0 +1,19 @@
+{% extends "cardpc/_base.html" %}
+{% load static %}
+
+{% block data-js %}account{% endblock %}
+{% block data-css %}account{% endblock %}
+
+{% block body %}
+<div class="account-header hide-on-sm-media">
+  <div class="account-header-content">
+    <div class="account-header-banner">
+      <a href="{% url 'zhixiang-homepage' %}"><img src="{% static 'cardpc/img/logo-banner.png' %}"></a>
+    </div>
+  </div>
+</div>
+
+<div id="account-app" class="account-main" data-app="{{ app }}" v-cloak>
+  <component :is="component" />
+</div>
+{% endblock %}

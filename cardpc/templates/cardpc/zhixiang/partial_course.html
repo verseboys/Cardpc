@@ -1,0 +1,58 @@
+{# 知享呼吸培训 -- 培训课程 Tab #}
+{% load static %}
+
+{% block main %}
+{% if not request.user_agent.is_mobile %}
+<div class="tab_cont">
+    <!-- 培训课程 training-course -->
+    <div class="training" id="training-course" {% if default_tab != 'b' %}style="display: none;"{% endif %}>
+        <div class="training_course">
+            {% for course in b.courses %}
+                <div class="table">
+                    <!-- 1、调研通过 认证状态随意 点击课程后，正常跳转ppt课程播放页  2、未参与调研 点击课程 弹框 -->
+                    {% if a.status == 1 %}
+                    <a href="javascript:;" class="to_cource_video" style="cursor: pointer;">
+                    {% else %}
+                    <a href="{{course.lesson_url}}" target="_blank" style="cursor: pointer;">
+                    {% endif %}
+                        <div class="thead d-flex">
+                            <span><img src="{{ course.thumbnail.url }}"></span>
+                            <div class="course_describe">
+                                <h2>{{ course.title }}</h2>
+                                <div class="ellipsis">{{ course.introduction|safe }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% elif request.user_agent.is_mobile %}
+<div class="mobile-tab-cont">
+    <!-- 培训课程 training-course -->
+    <div class="training" id="training-course" {% if default_tab != 'b' %}style="display: none;"{% endif %}>
+        <div class="training_course">
+            {% for course in b.courses %}
+                <div class="mobile-table">
+                    <!-- 1、调研通过 认证状态随意 点击课程后，正常跳转ppt课程播放页  2、未参与调研 点击课程 弹框 -->
+                    {% if a.status == 1 %}
+                    <a href="javascript:;" class="to_cource_video" style="cursor: pointer;">
+                    {% else %}
+                    <a href="{{course.lesson_url}}" target="_blank" style="cursor: pointer;">
+                    {% endif %}
+                        <div class="mobile-thead d-flex">
+                            <span><img src="{{ course.thumbnail.url }}"></span>
+                            <div class="course_describe">
+                                <h2>{{ course.title }}</h2>
+                                <!-- <div class="ellipsis">{{ course.introduction|safe }}</div>-->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

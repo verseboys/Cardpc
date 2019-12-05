@@ -1,0 +1,17 @@
+.git/
+.gitignore
+
+*.sw[op]
+*.py[cd]
+
+/nsproject/settings_local.py
+db.sqlite3
+
+*.sw[op]
+*.py[cd]
+__pycache__/
+node_modules/
+/build/
+/data/
+
+.gitlab-ci.yml

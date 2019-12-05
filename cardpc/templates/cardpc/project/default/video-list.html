@@ -1,0 +1,23 @@
+{# 视频列表页 #}
+{% extends './_base.html' %}
+
+{% block data-js %}project project-video-list{% endblock %}
+{% block data-css %}project project-video-list{% endblock %}
+
+{% block main %}
+<div class="ns-content main-content">
+  <div class="row p-4 video-list">
+    {% for video in videos %}
+      <div class="col-12 col-sm-12 col-md-6 col-lg-3 pl-1 pr-1 mb-3">
+        <a href="{{ video.url }}" class="d-block p-1">
+          <img class="img-fluid w-100" src="{{ video.video.thumbnail.url }}">
+          <p class="p-2 pt-3 pm-1">{{ video.video.title }}</p>
+          <p class="person-info p-2">周亚男 中日友好医院</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% include './pagination.html' with page=videos %}
+</div>
+{% endblock %}

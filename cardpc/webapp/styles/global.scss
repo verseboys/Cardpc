@@ -1,0 +1,99 @@
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+/*
+  在使用 Vue Component 的组件上加上 v-cloak 属性，vue 启动完成后会删除该属性。
+  在 vue 启动完成前，该内容不显示，从而避免 vue 加载完成前页面显示未渲染的内容。
+  https://vuejs.org/v2/api/#v-cloak
+ */
+[v-cloak] {
+  display: none;
+}
+
+.ns-content {
+  // 在窄屏幕上，占据整个宽度，在宽屏幕上，最大 1100px
+  width: 100vw;
+  max-width: 1100px;
+  padding: 10px 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 构造一个长宽比例一致的容器 div，注意，ns-stretchy-wrapper 的父元素需要指定宽度，例如 ns-content。
+// https://stackoverflow.com/a/10441480
+.ns-stretchy-wrapper {
+  width: 100%;
+  position: relative;
+
+  &.ratio-16-9 { padding-bottom: 56.25%; }
+  &.ratio-20-10 { padding-bottom: 50%; }
+  &.ratio-20-9 { padding-bottom: 45%; }
+  &.ratio-20-8 { padding-bottom: 40%; }
+  &.ratio-20-7 { padding-bottom: 35%; }
+  &.ratio-20-6 { padding-bottom: 30%; }
+  &.ratio-20-5 { padding-bottom: 25%; }
+  &.ratio-20-4 { padding-bottom: 20%; }
+  &.ratio-20-3 { padding-bottom: 15%; }
+  &.ratio-20-2 { padding-bottom: 10%; }
+  &.ratio-20-1 { padding-bottom: 5%; }
+
+  > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .hide-on-sm-media {
+    display: none;
+  }
+}

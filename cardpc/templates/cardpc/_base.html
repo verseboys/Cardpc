@@ -1,0 +1,43 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>{% block title %}中国基层呼吸疾病防治联盟 - 官方网站{% endblock %}</title>
+    <meta name="keywords" content="基层呼吸联盟 呼吸疾病防治">
+    <meta name="copyright" content="中国基层呼吸疾病防治联盟">
+    <link rel="shortcut icon" href="{% static 'cardpc/img/favicon.png' %}">
+    {% render_bundle 'cardpc' 'css' %}
+    {% block head_more %}{% endblock %}
+  </head>
+  <body
+    data-js="{% block data-js %}{% endblock %}"
+    data-css="{% block data-css %}{% endblock %}"
+    >
+    {% block body %}
+    <div style="position: relative;">
+      <div id="header" data-css="base-header">
+      {% block header %}{% include 'cardpc/partials/header.html'%}{% endblock %}
+      </div>
+
+      <div id="main" data-css="base-main">
+      {% block main %}{% endblock %}
+      </div>
+
+      {% if not request.user_agent.is_mobile %}
+      <div id="footer" data-css="base-footer">
+      {% block footer %}{% include 'cardpc/partials/footer.html'%}{% endblock %}
+      </div>
+      {% endif %}
+    </div>
+    {% endblock body %}
+
+    {% render_bundle 'cardpc' 'js' %}
+    {% block body_more %}{% endblock %}
+  </body>
+</html>

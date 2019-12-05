@@ -1,0 +1,73 @@
+div.file-download {
+  width: 1200px;
+  min-height: 500px;
+  margin: 42px auto 136px;
+  background: #fff;
+  padding-top: 36px;
+  padding-bottom: 75px;
+  padding-left: 20px;
+}
+
+div.file-download div:first-child > ul {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+}
+
+div.file-download > ul > li {
+  width: 1162px;
+  height: 103px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 #d8d8d8;
+}
+
+div.file-download div:first-child > ul > li {
+  width: 90px;
+  height: 37px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 37px;
+  border-radius: 2px;
+  background-color: #eaeaf0;
+  margin-right: 10px;
+}
+
+div.file-download div:first-child > ul > li:nth-child(3) {
+  width: 124px;
+}
+
+div.file-download div:first-child > ul > li.selected {
+  background-color: #faf5e2;
+  color: #f5a623;
+}
+
+div.file-download > ul > li > div {
+  margin-left: 30px;
+}
+
+div.file-download > ul > li > div > h3 {
+  color: #403f40;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+div.file-download > ul > li > div > p {
+  color: #9b9b9b;
+  font-size: 16px;
+  line-height: 36px;
+}
+
+div.file-download > ul > li > a {
+  display: block;
+  width: 99px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #f5a623;
+  color: #fff;
+  margin-right: 27px;
+}

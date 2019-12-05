@@ -1,0 +1,54 @@
+{# 知享新闻列表页 #}
+{% extends "cardpc/_base.html" %}
+{% load static %}
+{% block data-js %}zhixiang-news-list{% endblock %}
+{% block data-css %}zhixiang zhixiang-news-list{% endblock %}
+{% block main %}
+<!-- 知享新闻列表页 -->
+	<!-- banner部分 S -->
+	<div class="banner">
+		<h2></h2>
+	</div>
+	<!-- banner部分 E -->
+	<!-- 面包屑导航 S -->
+	<div class="breadcrumb">
+		<ul>
+			<li>
+				<a href="https://www.cardpc.org/">首页</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li>
+				<a href="https://www.cardpc.org/page/show/3">学术活动</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li>
+				<a href="https://www.cardpc.org/page/show/3">活动大厅</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li>
+				<a href="javscript:;">知享呼吸</a>
+				<span class="divider">&gt;</span>
+			</li>
+			<li class="active">新闻</li>
+		</ul>
+	</div>
+	<!-- 面包屑导航 E -->
+	<!-- 新闻列表 S -->
+	{% for news in all_news %}
+	<div class="news_list">
+		<a href="{% url 'zhixiang-news-detail' id=news.id %}">
+			<div class="list">
+				<div class="news_list_pic">
+					<img src="{{news.thumbnail}}">
+				</div>
+				<div class="news_list_content">
+					<h4>{{news.title}}</h4>
+					<p>{{news.introduction|safe}}</p>
+					<p style="padding-top: 14px; font-size: 14px;">{{news.publish_time|date:'Y/m/d H:i:s'}}</p>
+				</div>
+			</div>
+		</a>
+	</div>
+	{% endfor %}
+	<!-- 新闻列表 E -->
+{% endblock %}
